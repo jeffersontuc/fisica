@@ -1,5 +1,8 @@
-angular.module('fisica', [])
+angular.module('fisica', ['ngMaterial'])
 
-.controller('questionController', function ($scope) {
+.controller('questionsController', function ($scope) {
     $scope.titulo = 'Questão 1';
+
+    $scope.currentNavItem = 'page1';
 });
+
