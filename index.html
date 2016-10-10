@@ -49,7 +49,7 @@
                             </md-input-container>
                         </p>
                         <div>
-                            <md-button class="md-raised" ng-click="calculaForca(); dist = undefined; q1 = undefined; q2 = undefined; exp1 = undefined; exp2 = undefined">Ok</md-button>
+                            <md-button class="md-raised" ng-click="calculaForca(); dist=undefined;q1=undefined;q2=undefined;exp1=undefined;exp2=undefined">Ok</md-button>
                             <div style="background-color: #F8BBD0;">{{result}}</div>
                         </div>
                     </div>
@@ -93,8 +93,44 @@
                     </div>
                 </div>
 
+                <!-- ///////// Questão 2 -->
+
+
                 <div ng-show="currentNavItem == 'page3'">
-                    <h1>Questão sobre campo magnético</h1>
+                    <h1 style="text-align: center;">Força Magnética</h1>
+                    <div style="text-align: center;">
+                        <md-input-container > 
+                            <label>Velocidade (m/s)</label>
+                            <input ng-model="velocidade" style="width: 500px">
+                        </md-input-container>
+                        <p>
+                            <md-input-container > 
+                                <label>Campo magnético (Tesla)</label>
+                                <input ng-model="campo" style="width: 500px">
+                            </md-input-container>
+                        </p>
+                        <p>
+                            <md-input-container > 
+                            <label>Carga</label>
+                            <input ng-model="carga" style="width: 500px">
+                        </md-input-container>
+                        x<span style="font-size: 20px">10</span>^
+                        <md-input-container > 
+                            <label>exp</label>
+                            <input ng-model="expm" style="width: 40px">
+                        </md-input-container>
+                        </p>
+                        <p>
+                            <md-input-container > 
+                            <label>Ângulo</label>
+                            <input ng-model="angulo" style="width: 500px">
+                        </md-input-container>
+                        </p>
+                        <div>
+                            <md-button class="md-raised" ng-click="calculaForcaMagnetica(); campo=undefined;velocidade=undefined;angulo=undefined;carga=undefined; expm=undefined">OK</md-button>
+                            <div style="background-color: #F8BBD0;  text-align: center;">{{magnetica}}</div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
