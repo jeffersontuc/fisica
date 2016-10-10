@@ -7,7 +7,6 @@
 
 </head>
 <body ng-app="fisica">
-
     <div  ng-controller="questionsController" ng-cloak>
         <md-content class="md-padding">
             <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links" >
@@ -17,9 +16,46 @@
             </md-nav-bar>
 
             <div>
-                <div ng-show="currentNavItem == 'page1'">
-                    <h1>Questão sobre lei de coulomb</h1>
+                
+                <!-- Questão 1 -->
+
+                <div ng-show="currentNavItem == 'page1'" >
+                    <h1 style="text-align: center;">Lei de coulomb</h1>
+                    <div style="padding-top: 100px; padding-left: 100px; text-align: center">
+                        <md-input-container > 
+                            <label>Q1</label>
+                            <input ng-model="q1" style="width: 500px">
+                        </md-input-container>
+                        x<span style="font-size: 20px">10</span>^
+                        <md-input-container > 
+                            <label>exp</label>
+                            <input ng-model="exp1" style="width: 40px">
+                        </md-input-container>
+                        <p>
+                            <md-input-container > 
+                                <label>Q2</label>
+                                <input ng-model="q2" style="width: 500px">
+                            </md-input-container>
+                            x<span style="font-size: 20px">10</span>^
+                            <md-input-container > 
+                                <label>exp</label>
+                                <input ng-model="exp2" style="width: 40px">
+                            </md-input-container>
+                        </p>
+                        <p>
+                            <md-input-container > 
+                                <label>Distância em metros</label>
+                                <input ng-model="dist" style="width: 200px">
+                            </md-input-container>
+                        </p>
+                    </div>
+                    <div style="padding-left: 600px">
+                        <md-button class="md-raised" ng-click="calculaForca(); dist = undefined; q1 = undefined; q2 = undefined; exp1 = undefined; exp2 = undefined">Ok</md-button>
+                        <div style="background-color: #F8BBD0; width: 400px;">{{result}}</div>
+                    </div>
                 </div>
+
+            <!-- /////// Questão 1 -->
 
                 <div ng-show="currentNavItem == 'page2'">
                     <h1>Questão sobre a segunda Unidade</h1>
@@ -33,7 +69,6 @@
         </md-content>
 
     </div>
-
 
     <!--Bibliotecas do angular-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
