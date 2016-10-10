@@ -8,7 +8,7 @@
 </head>
 <body ng-app="fisica">
     <div  ng-controller="questionsController" ng-cloak>
-        <md-content class="md-padding">
+        <md-content class="md-padding" ng-hide="sobre">
             <md-nav-bar md-selected-nav-item="currentNavItem" nav-bar-aria-label="navigation links" >
                 <md-nav-item md-nav-click="goto('page1')" name="page1" style="padding-left: 500px">Questão 1</md-nav-item>
                 <md-nav-item md-nav-click="goto('page2')" name="page2">Questão 2</md-nav-item>
@@ -135,6 +135,22 @@
             </div>
 
         </md-content>
+
+        <md-button class="md-raised" style="position: fixed; bottom: 0; right: 0; background-color: #F48FB1" ng-click="sobre = !sobre">Sobre</md-button>
+
+        <div ng-show="sobre" style="padding-left: 50px">
+            <h1>Alunos</h1>
+            <ul>
+                <li>Jefferson Carlos N. Benedito - 116110156</li>
+                <li>Thales Henrique Dantas Souto - 113210810</li>
+            </ul>
+            <h1>Professor</h1>
+            <ul>
+                <li>
+                    Marcos Antonio do Amaral Lins
+                </li>
+            </ul>
+        </div>
 
     </div>
 
