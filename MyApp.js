@@ -11,6 +11,15 @@ angular.module('fisica', ['ngMaterial'])
     $scope.result;
 
 
+
+    $scope.rfio;
+    $scope.rbateria;
+    $scope.eletromotriz;
+    $scope.tempo;
+    $scope.energia;
+
+
+
     $scope.calculaForca = function(){
     	var expRes = parseInt($scope.exp2) + parseInt($scope.exp1);
     	$scope.result = parseFloat($scope.k) * parseFloat($scope.q1) * parseFloat($scope.q2) / Math.pow(parseFloat($scope.dist), 2);
@@ -21,6 +30,11 @@ angular.module('fisica', ['ngMaterial'])
     	}
     	$scope.result += expRes;
     	stringResult = procuraZero(JSON.stringify($scope.result));
+    };
+
+    $scope.calculaEnergia = function(){
+    	$scope.energia = Math.pow(parseFloat($scope.eletromotriz), 2) * parseFloat($scope.tempo) * 60 / (parseFloat($scope.rfio) + parseFloat($scope.rbateria));
+    	$scope.energia += " J";
     };
 
     $scope.currentNavItem = 'page1';

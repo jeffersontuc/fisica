@@ -21,7 +21,7 @@
 
                 <div ng-show="currentNavItem == 'page1'" >
                     <h1 style="text-align: center;">Lei de coulomb</h1>
-                    <div style="padding-top: 100px; padding-left: 100px; text-align: center">
+                    <div style="padding-top: 100px; text-align: center">
                         <md-input-container > 
                             <label>Q1</label>
                             <input ng-model="q1" style="width: 500px">
@@ -48,17 +48,49 @@
                                 <input ng-model="dist" style="width: 200px">
                             </md-input-container>
                         </p>
+                        <div>
+                            <md-button class="md-raised" ng-click="calculaForca(); dist = undefined; q1 = undefined; q2 = undefined; exp1 = undefined; exp2 = undefined">Ok</md-button>
+                            <div style="background-color: #F8BBD0;">{{result}}</div>
+                        </div>
                     </div>
-                    <div style="padding-left: 600px">
-                        <md-button class="md-raised" ng-click="calculaForca(); dist = undefined; q1 = undefined; q2 = undefined; exp1 = undefined; exp2 = undefined">Ok</md-button>
-                        <div style="background-color: #F8BBD0; width: 400px;">{{result}}</div>
-                    </div>
+
                 </div>
 
             <!-- /////// Questão 1 -->
 
                 <div ng-show="currentNavItem == 'page2'">
-                    <h1>Questão sobre a segunda Unidade</h1>
+                    <h1 style="text-align: center;">Energia química consumida por uma bateria</h1>
+                    <h3 style="text-align: center">(Através de um fio)</h3>
+                    <div style="text-align: center">
+                        <md-input-container > 
+                            <label>Resistência do fio</label>
+                            <input ng-model="rfio" style="width: 500px">
+                        </md-input-container>
+                        <p>
+                            <md-input-container > 
+                                <label>Resistência interna da bateria</label>
+                                <input ng-model="rbateria" style="width: 500px">
+                            </md-input-container>
+                        </p>
+
+                        <p>
+                            <md-input-container > 
+                                <label>Tempo em minutos</label>
+                                <input ng-model="tempo" style="width: 500px">
+                            </md-input-container>
+                        </p>
+
+                        <p>
+                            <md-input-container > 
+                                <label>Força eletromotriz</label>
+                                <input ng-model="eletromotriz" style="width: 500px">
+                            </md-input-container>
+                        </p>
+                        <div>
+                            <md-button class="md-raised" ng-click="calculaEnergia(); rfio=undefined;rbateria=undefined;tempo=undefined;eletromotriz=undefined">OK</md-button>
+                            <div style="background-color: #F8BBD0;  text-align: center;">{{energia}}</div>
+                        </div>
+                    </div>
                 </div>
 
                 <div ng-show="currentNavItem == 'page3'">
