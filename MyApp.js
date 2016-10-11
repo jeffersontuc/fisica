@@ -2,8 +2,6 @@ angular.module('fisica', ['ngMaterial'])
 
 .controller('questionsController', function ($scope) {
     $scope.titulo = 'Questão 1';
-
-    $scope.sobre = false;
     $scope.q1;
     $scope.q2;
     $scope.exp1;
@@ -20,6 +18,7 @@ angular.module('fisica', ['ngMaterial'])
     $scope.tempo;
     $scope.energia;
 
+    $scope.sobre = false;
 
 
 
@@ -34,7 +33,7 @@ angular.module('fisica', ['ngMaterial'])
 
     $scope.calculaForca = function(){
     	var expRes = parseInt($scope.exp2) + parseInt($scope.exp1);
-    	$scope.result = parseFloat($scope.k) * parseFloat($scope.q1) * parseFloat($scope.q2) / Math.pow(parseFloat($scope.dist), 2);
+    	$scope.result = -1 * parseFloat($scope.k) * parseFloat($scope.q1) * parseFloat($scope.q2) / Math.pow(parseFloat($scope.dist), 2);
     	if(isNaN(expRes)){
     		expRes = " N";
     	}else{
